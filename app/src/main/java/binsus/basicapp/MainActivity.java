@@ -43,8 +43,10 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, detail.class);
                 String title = nameArray[position];
                 String info = infoArray[position];
+                Integer gambar = imageArray[position];
                 intent.putExtra("judul", title);
                 intent.putExtra("keterangan", info);
+                intent.putExtra("gambar",gambar);
                 startActivity(intent);
             }
         });
