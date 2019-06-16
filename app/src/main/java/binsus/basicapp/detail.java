@@ -14,8 +14,13 @@ public class detail extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
-        String savedExtra = getIntent().getStringExtra("Programming Language");
-        TextView myText = (TextView) findViewById(R.id.textID);
-        myText.setText(savedExtra);
+        String judulExtra = getIntent().getStringExtra("judul");
+        TextView judul = (TextView) findViewById(R.id.textID);
+
+        String keteranganExtra = getIntent().getStringExtra("keterangan");
+        TextView keterangan = (TextView) findViewById(R.id.infoID);
+
+        judul.setText(judulExtra);
+        keterangan.setText(keteranganExtra);
     }
 }

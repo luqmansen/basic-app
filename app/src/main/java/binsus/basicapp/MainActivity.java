@@ -41,8 +41,10 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 Intent intent = new Intent(MainActivity.this, detail.class);
-                String message = nameArray[position];
-                intent.putExtra("Programming Language", message);
+                String title = nameArray[position];
+                String info = infoArray[position];
+                intent.putExtra("judul", title);
+                intent.putExtra("keterangan", info);
                 startActivity(intent);
             }
         });
