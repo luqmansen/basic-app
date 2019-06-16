@@ -6,9 +6,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     String[] nameArray = {"Java", "Python", "Golang", "C++"};
 
@@ -25,11 +26,15 @@ public class MainActivity extends AppCompatActivity {
             R.drawable.cpp};
 
     ListView listView;
+    Button btnAbout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        btnAbout = findViewById(R.id.about);
+        btnAbout.setOnClickListener(this);
 
         CustomListAdapter adapter = new CustomListAdapter(this,nameArray, infoArray, imageArray);
 
@@ -52,5 +57,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.about:
+                Intent moveIntent = new Intent(MainActivity.this, About_activity.class);
+                startActivity(moveIntent);
+                break;
+        }
     }
 }
