@@ -44,9 +44,11 @@ public class MainActivity extends AppCompatActivity {
                 String title = nameArray[position];
                 String info = infoArray[position];
                 Integer gambar = imageArray[position];
+                Integer posisi = position;
                 intent.putExtra("judul", title);
                 intent.putExtra("keterangan", info);
                 intent.putExtra("gambar",gambar);
+                intent.putExtra("posisi", posisi);
                 startActivity(intent);
             }
         });
